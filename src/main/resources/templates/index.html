@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="p-5">
+    <form action="/saveRecord" method="POST">
+        <!--INPUT FORM-->
+        <div class="form-group col-lg-3 pt-2">
+            <label for="city">Název města</label>
+            <input type="text" id="city" name="city" class="form-control">
+            <input type="submit" value="Odeslat" class="btn btn-primary mt-2">
+        </div>
+    </form>
+    <!--zobrazeni teploty, historie hledani-->
+    <!--podminka je, ze neni list zaznamu prazdny-->
+    <section th:if="${not #lists.isEmpty(records)}">
+        <!--INFO-->
+        <!--aktualni teplota-->
+        <div class="d-flex flex-column p-2 text-secondary">
+            <h2 th:text="${city}"></h2>
+            <div class="d-flex">
+                <h3>Aktuální teplota: </h3>
+                <h3 th:text="${temp}"></h3>
+            </div>
+        </div>
+        <h3 class="p-2">Seznam záznamů</h3>
+        <!--DATA GRID-->
+        <table class="table table-hover">
+            <tr>
+                <th>Datum</th>
+                <th>Průměrná teplota</th>
+            </tr>
+            <tr th:each="record : ${records}">
+                <td th:text="${record.getDatum()}">Datum</td>
+                <td th:text="${record.getTeplota()}">Průměrná teplota</td>
+            </tr>
+        </table>
+    </section>
+</div>
+
+</body>
+</html>
