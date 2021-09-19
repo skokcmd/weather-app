@@ -26,5 +26,9 @@ spring.datasource.password=postgres
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
 
+
+## Testy
+Pro integrační testy jsem použil Testcontainers (viz https://www.testcontainers.org/)
+
 ## openweathermap-java-api
 Pro interakci s openweathermap jsem použil knihovnu openweathermap-java-api (viz https://github.com/Prominence/openweathermap-java-api/blob/master/docs/Release_2.2.0.md)
