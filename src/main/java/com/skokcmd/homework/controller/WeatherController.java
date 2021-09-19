@@ -1,8 +1,8 @@
 package com.skokcmd.homework.controller;
 
 import com.skokcmd.homework.model.HistoryRecord;
-import com.skokcmd.homework.service.HistoryRecordService;
-import com.skokcmd.homework.service.WeatherService;
+import com.skokcmd.homework.service.HistoryRecordServiceImp;
+import com.skokcmd.homework.service.WeatherServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class WeatherController {
 
-  @Autowired private WeatherService weatherService;
-  @Autowired private HistoryRecordService historyRecordService;
+  @Autowired private WeatherServiceImp weatherService;
+  @Autowired private HistoryRecordServiceImp historyRecordService;
 
   @GetMapping("/")
   public String viewCityDetails(Model model) {
