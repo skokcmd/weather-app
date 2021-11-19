@@ -1,6 +1,4 @@
-# Artio homework
-
-Zadání jsem vypracoval pomocí frameworku Spring boot za použití JPA, Lomboku, Thymeleaf a Postgres databáze.
+# Spring boot simple weather app
 
 ## Struktura databáze
 * historie table - sloupce:
